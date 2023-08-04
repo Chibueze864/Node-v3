@@ -20,14 +20,7 @@ const bulkCreateSchema = joi.object({
   bulk_data: joi
     .array()
     .items(
-      joi.object({
-        country: joi.string().required(),
-        customer: joi.string().required(),
-        amount: joi.number().positive().required(),
-        recurrence: joi.string().valid('WEEKLY', 'MONTHLY').required(),
-        type: joi.string().required(),
-        reference: joi.string().required(),
-      }),
+        createSchema // Makes code more concise as variable is already defined above
     )
     .min(1)
     .required(),
